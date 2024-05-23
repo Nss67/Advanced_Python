@@ -17,3 +17,25 @@ print(result1)
 
 result2 = num1 is num2  # checks base on their objects class
 print(result2)
+
+# everything in programing is a number
+name = "Nss67"
+str1 = "a"
+str2 = "A"
+print(len(name))
+name = chr(ord(name[0]) + 2) + name[1:len(name)-1] + str(int(name[4])+2)
+print(name)
+print(chr(ord(str1) + 2))
+print(ord(str1), str1)
+print(ord(str2), str2)
+
+if str1 > str2:
+    print(str1)
+
+else:
+    print(str2)
+
+print(__name__)
+
+if __name__ == "__main__":
+    print("Hello")
