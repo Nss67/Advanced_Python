@@ -1,41 +1,136 @@
-x = True
-y = False
+# x = True
+# y = False
+#
+# k, v = (2, "s")
+# _list = [1, 3, "y"]
+# while (k == 2) and (v == "s") and ("y" in _list):
+#     print(k, v, _list)
+#     break
+# if x or y:
+#     print("OR")
+#
+# num1, num2 = 13, float("13")
+#
+# print(type(num1), type(num2), "\n")
+# result1 = num1 == num2  # checked base on their values
+# print(result1)
+#
+# result2 = num1 is num2  # checks base on their objects class
+# print(result2)
+#
+# # everything in programing is a number
+# name = "Nss67"
+# str1 = "a"
+# str2 = "A"
+# print(len(name))
+# name = chr(ord(name[0]) + 2) + name[1:len(name)-1] + str(int(name[4])+2)
+# print(name)
+# print(chr(ord(str1) + 2))
+# print(ord(str1), str1)
+# print(ord(str2), str2)
+#
+# if str1 > str2:
+#     print(str1)
+#
+# else:
+#     print(str2)
+#
+# print(__name__)
+#
+# if __name__ == "__main__":
+#     print("Hello")
 
-k, v = (2, "s")
-_list = [1, 3, "y"]
-while (k == 2) and (v == "s") and ("y" in _list):
-    print(k, v, _list)
-    break
-if x or y:
-    print("OR")
+# _number1 = int(5)
+# _number2 = float(5)
+# _horouf = "Amin"
+# _booleanT = True
+# _booleanF = False
+# _dictionary = {"name": "Milad", "Esm": "Amin", "age": 15, "List05": [1, 2, 3, 4, 5, 5, 6]}
+# _list = [1, "A", 23, "B"]
+# _set = {1, "A", 23, "B"}
+# _tuple = (1, 2, 3, "A")
+#
+# print("A", ord("A"), bin(ord("A"))[2:])
+# print("m", ord("m"), bin(ord("m"))[2:])
+# print("i", ord("i"), bin(ord("i"))[2:])
+# print("n", ord("n"), bin(ord("n"))[2:])
+#
+# x, y, z = 1, 2, 3
+# print(x, y, z)
+# print(_horouf[0])
+# print(_list[2])
+# _list[2] = "HI"
+# print(_list[2])
+#
+# print(_dictionary.keys())
 
-num1, num2 = 13, float("13")
 
-print(type(num1), type(num2), "\n")
-result1 = num1 == num2  # checked base on their values
-print(result1)
+# x = 23
+# y = "23"
+#
+# print(type(x))
+# print(type(y))
+#
+# print(y[0], ord(y[0]), bin(ord(y[0]))[2:])
+# print(y[1], ord(y[1]), bin(ord(y[1]))[2:])
+# print(x, bin(x)[2:])
+#
+# x = int(input("ye adad benevis: "))
+#
+# print(x)
+# print(type(x))
 
-result2 = num1 is num2  # checks base on their objects class
-print(result2)
+# x = 5
+# y = "Hi!"
+# x_id = id(x)
+# y_id = id(y)
+# x_hex = hex(x_id)
+# y_hex = hex(y_id)
+#
+# print(x_id)
+# print(x_hex)
+# print()
+# print(y_id)
+# print(y_hex)
+# print()
+# print(type(x), type(x_id), type(x_hex))
+# print(type(y), type(y_id), type(y_hex))
+#
+# print(y_hex)
+# hex_y_0 = hex(id(y[0]))
+# hex_y_1 = hex(id(y[1]))
+# hex_y_2 = hex(id(y[2]))
+# print(hex_y_0)
+# print(hex_y_1)
+# print(hex_y_2)
 
-# everything in programing is a number
-name = "Nss67"
-str1 = "a"
-str2 = "A"
-print(len(name))
-name = chr(ord(name[0]) + 2) + name[1:len(name)-1] + str(int(name[4])+2)
-print(name)
-print(chr(ord(str1) + 2))
-print(ord(str1), str1)
-print(ord(str2), str2)
+# name = input("Enter your name: ")
+# for i in range(len(name)):
+#     print(bin(ord(name[i]))[2:])
 
-if str1 > str2:
-    print(str1)
+# x = input("write something: ")
+# y = input("write same thing: ")
+#
+# print(x == y)
+#
+# y = x[0].upper()
+# print(x, y)
+# print(hex(id(x)))
+# y = x
+# print(hex(id(y)))
+# x = x.capitalize()
+# print(x, y)
+# x_hex = hex(id(x))
+# y_hex = hex(id(y))
+# print(x_hex)
+# print(y_hex)
+# print(x_hex == y_hex)
 
-else:
-    print(str2)
 
-print(__name__)
-
-if __name__ == "__main__":
-    print("Hello")
+# # Endless for
+# x = [1]
+# for i in x:
+#     print(i)
+#     x.append(i + 1)
+#     if i > 100:
+#         break
