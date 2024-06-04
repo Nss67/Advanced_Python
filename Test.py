@@ -134,3 +134,62 @@
 #     x.append(i + 1)
 #     if i > 100:
 #         break
+
+# _range_listed = list(range(1, 101))
+# print(_range_listed[::-1])
+# print(type(_range_listed))
+
+# x = 3
+# y = 100
+# z = y / 3
+# print(f"result is: {z:.5} and type of z is {type(z)}")
+# print(f"result is: {z:.5f} and type of z is {type(z)}")
+
+# with open("kuzey_yildizi_S01.txt", mode="w") as file:
+#     for i in range(1, 59):
+#         if i < 10:
+#             file.write(f"https://cld17.hostdl.net/serial/foreign/2020/kuzey-yildizi/Kuzey_Yildizi_E0{i}_1080p.mkv\n")
+#         else:
+#             file.write(f"https://cld17.hostdl.net/serial/foreign/2020/kuzey-yildizi/Kuzey_Yildizi_E{i}_1080p.mkv\n")
+#     file.close()
+#
+#
+# with open("kuzey_yildizi_S02.txt", mode="w") as file:
+#     for i in range(1, 71):
+#         if i < 10:
+#             file.write(f"https://cld17.hostdl.net/serial/foreign/2020/kuzey-yildizi/Kuzey_Yildizi_S02_E0{i}_1080p.mkv\n")
+#         else:
+#             file.write(f"https://cld17.hostdl.net/serial/foreign/2020/kuzey-yildizi/Kuzey_Yildizi_S02_E{i}_1080p.mkv\n")
+#     file.close()
+
+count = 1
+
+
+# def repeat(*args):
+#     print(*args)
+#     global count
+#     print(count)
+#     count += 1
+#     if count <= 10:
+#         repeat(*args)
+#
+#
+# repeat(input("Enter some values: "))
+
+# print("normal way")
+# for i in range(3):
+#     for j in range(3):
+#         print("#", end="")
+#     print()
+#
+# print("Easy way")
+#
+# for i in range(3):
+#     print("#" * 3)
+
+# # List Appending
+# li = []
+# for i in range(3):
+#     x = input("Enter some: ")
+#     li += [x]
+# print(li)
