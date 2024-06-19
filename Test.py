@@ -162,7 +162,7 @@
 #             file.write(f"https://cld17.hostdl.net/serial/foreign/2020/kuzey-yildizi/Kuzey_Yildizi_S02_E{i}_1080p.mkv\n")
 #     file.close()
 
-count = 1
+# count = 1
 
 
 # def repeat(*args):
@@ -193,3 +193,28 @@ count = 1
 #     x = input("Enter some: ")
 #     li += [x]
 # print(li)
+
+# work with sys library
+# import sys
+#
+# if len(sys.argv) > 2:
+#     print("Hi", sys.argv[1])
+#     sys.exit()
+# else:
+#     print("hello world")
+#     sys.exit()
+
+# x = 2
+# counter = 0
+# while True:
+#     counter += 1
+#     print(counter, "you NotCoin is: ", x)
+#     input("please Click!: ")
+#     x **= 2
+
+# x = 0
+# while True:
+#     print("your NotCoin is: ", x)
+#     input("please Click!: ")
+#     x += 1
+
