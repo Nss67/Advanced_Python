@@ -1,0 +1,78 @@
+// Include the necessary libraries
+#include <Trade\AccountInfo.mqh>
+#include <Trade\SymbolInfo.mqh>
+#include <Time\UniversalTime.mqh>
+
+// Define the symbol to trade (XAUUSD)
+string symbol = "XAUUSD";
+
+// Define the timeframe (4H in this example)
+int timeframe = PERIOD_H4;
+
+// Define the number of candles to retrieve
+int numCandles = 10;
+
+// Initialize the time zone information
+int timezoneOffset = GetTimeZoneOffset("Asia/Tehran"); // Replace with your desired time zone
+
+// Function to convert Unix timestamp to Iran time zone
+datetime GetIranTime(double timestamp) {
+  // Convert Unix timestamp to GMT time
+  datetime gmtTime = UniversalTime2GMT(timestamp);
+
+  // Adjust for Iran time zone offset
+  gmtTime.hour += timezoneOffset / 3600;
+
+  // Normalize time values
+  if (gmtTime.hour < 0) {
+    gmtTime.hour += 24;
+    gmtTime.mday--;
+  } else if (gmtTime.hour >= 24) {
+    gmtTime.hour -= 24;
+    gmtTime.mday++;
+  }
+
+  // Return the Iran time
+  return gmtTime;
+}
+
+// Function to retrieve and display candle stick data
+void RetrieveAndDisplayData() {
+  // Get the current symbol information
+  SymbolInfoFor(symbol, _SymbolInfo);
+
+  // Get the current bid price
+  double bidPrice = SymbolInfoDouble(_SymbolInfo, SYMBOL_BID);
+
+  // Get the historical candle stick data
+  double[] time, open, high, low, close, volume[];
+  ArrayResize(time, numCandles);
+  ArrayResize(open, numCandles);
+  ArrayResize(high, numCandles);
+  ArrayResize(low, numCandles);
+  ArrayResize(close, numCandles);
+  ArrayResize(volume, numCandles);
+
+  CopyRates(_SymbolInfo, timeframe, 0, numCandles, time, open, high, low, close, volume);
+
+  // Print the current bid price
+  Print("Current Bid Price:", bidPrice);
+
+  // Display the candle stick data with Iran time zone
+  for (int i = 0; i < numCandles; i++) {
+    datetime iranTime = GetIranTime(time[i]);
+    Print("Time:", iranTime.mday, ".", iranTime.month, ".", iranTime.year, " ", iranTime.hour, ":", iranTime.minute);
+    Print("Open:", open[i]);
+    Print("High:", high[i]);
+    Print("Low:", low[i]);
+    Print("Close:", close[i]);
+    Print("Volume:", volume[i]);
+    Print("-------------------");
+  }
+}
+
+// Main function
+void OnTick() {
+  // Call the function to retrieve and display data
+  RetrieveAndDisplayData();
+}
