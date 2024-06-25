@@ -131,7 +131,7 @@ timezone = pytz.timezone("Asia/Tehran")
 local_time = datetime.now()
 print(local_time)
 
-# Get 10 candles for 4H time frame
+# Get 10 candles info for 4H and 15min and 3min timeframe with timezone
 candles_4h = mt.copy_rates_from("XAUUSD", mt.TIMEFRAME_H4, local_time, 10)
 candles_15m = mt.copy_rates_from("XAUUSD", mt.TIMEFRAME_M15, local_time, 10)
 candles_3m = mt.copy_rates_from("XAUUSD", mt.TIMEFRAME_M3, local_time, 10)
@@ -139,21 +139,41 @@ candles_3m = mt.copy_rates_from("XAUUSD", mt.TIMEFRAME_M3, local_time, 10)
 print(type(candles_3m))
 
 candles_4h_dataframe = pd.DataFrame(candles_4h)
-candles_4h_dataframe.index = range(1, len(candles_4h_dataframe)+1)
+candles_4h_dataframe.index = range(1, len(candles_4h_dataframe.index)+1)
 candles_4h_dataframe["time"] = pd.to_datetime(candles_4h_dataframe["time"], unit="s", utc=True)
 candles_4h_dataframe["time"] = candles_4h_dataframe["time"].dt.tz_convert(tz=timezone)
 print(candles_4h_dataframe, "\n")
 
 candles_15m_dataframe = pd.DataFrame(candles_15m)
-candles_15m_dataframe.index = range(1, len(candles_15m_dataframe)+1)
+candles_15m_dataframe.index = range(1, len(candles_15m_dataframe.index)+1)
 candles_15m_dataframe["time"] = pd.to_datetime(candles_15m_dataframe["time"], unit="s", utc=True)
 candles_15m_dataframe["time"] = candles_15m_dataframe["time"].dt.tz_convert(tz=timezone)
 print(candles_15m_dataframe, "\n")
 
 candles_3m_dataframe = pd.DataFrame(candles_3m)
-candles_3m_dataframe.index = range(1, len(candles_3m_dataframe)+1)
+candles_3m_dataframe.index = range(1, len(candles_3m_dataframe.index)+1)
 candles_3m_dataframe["time"] = pd.to_datetime(candles_3m_dataframe["time"], unit="s", utc=True)
 candles_3m_dataframe["time"] = candles_3m_dataframe["time"].dt.tz_convert(tz=timezone)
 print(candles_3m_dataframe, "\n")
+
+# Get 10 candle info for 1D timeframe with number of candle bars from now to before
+candles_bar = mt.copy_rates_from_pos("XAUUSD", mt.TIMEFRAME_D1, 0, 10)
+candles_bar_dataframe = pd.DataFrame(candles_bar)
+candles_bar_dataframe.index = range(1, len(candles_bar_dataframe.index)+1)
+candles_bar_dataframe["time"] = pd.to_datetime(candles_bar_dataframe["time"], unit="s", utc=True)
+candles_bar_dataframe["time"] = candles_bar_dataframe["time"].dt.tz_convert(tz=timezone)
+print(candles_bar_dataframe, "\n")
+
+# Get range of candles between two different range times
+time01 = datetime(2023, 6, 25, tzinfo=pytz.utc)
+time02 = datetime(2024, 6, 25, tzinfo=pytz.utc)
+candles_range = mt.copy_rates_range("XAUUSD", mt.TIMEFRAME_W1, time01, time02)
+candles_range_dataframe = pd.DataFrame(candles_range)
+candles_range_dataframe.index = range(1, len(candles_range_dataframe.index)+1)
+candles_range_dataframe["time"] = pd.to_datetime(candles_range_dataframe["time"], unit="s", utc=True)
+candles_range_dataframe["time"] = candles_range_dataframe["time"].dt.tz_convert(tz=timezone)
+print(candles_range_dataframe)
+
+
 
 mt.shutdown()
