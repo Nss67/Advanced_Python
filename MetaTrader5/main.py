@@ -172,8 +172,136 @@ candles_range_dataframe = pd.DataFrame(candles_range)
 candles_range_dataframe.index = range(1, len(candles_range_dataframe.index)+1)
 candles_range_dataframe["time"] = pd.to_datetime(candles_range_dataframe["time"], unit="s", utc=True)
 candles_range_dataframe["time"] = candles_range_dataframe["time"].dt.tz_convert(tz=timezone)
-print(candles_range_dataframe)
+print(candles_range_dataframe, "\n")
 
+# Get range ticks from specific date to now in specific number of ticks with flag to define kind of ticks
+specific_date = datetime(2024, 3, 12, tzinfo=pytz.utc)
+count = 1500
+flag = mt.COPY_TICKS_ALL
+tick_range_from = mt.copy_ticks_from("XAUUSD", specific_date, count, flag)
+tick_range_from_dataframe = pd.DataFrame(tick_range_from)
+tick_range_from_dataframe.index = range(1, len(tick_range_from_dataframe.index)+1)
+tick_range_from_dataframe["time"] = pd.to_datetime(tick_range_from_dataframe["time"], unit="s", utc=True)
+tick_range_from_dataframe["time"] = tick_range_from_dataframe["time"].dt.tz_convert(tz=timezone)
+print(tick_range_from_dataframe, "\n")
 
+# Get range ticks from specific date to other specific date with flag to define kind of ticks
+first_specific_date = datetime(2024, 3, 12, tzinfo=pytz.utc)
+second_specific_date = datetime(2024, 6, 12, tzinfo=pytz.utc)
+flag = mt.COPY_TICKS_ALL
+tick_range_from = mt.copy_ticks_range("XAUUSD", first_specific_date, second_specific_date, flag)
+tick_range_from_dataframe = pd.DataFrame(tick_range_from)
+tick_range_from_dataframe.index = range(1, len(tick_range_from_dataframe.index)+1)
+tick_range_from_dataframe["time"] = pd.to_datetime(tick_range_from_dataframe["time"], unit="s", utc=True)
+tick_range_from_dataframe["time"] = tick_range_from_dataframe["time"].dt.tz_convert(tz=timezone)
+print(tick_range_from_dataframe, "\n")
+
+# Get info Account Currency
+balance = mt.account_info().balance
+currency = mt.account_info().currency
+print(f"You account balace is {balance} {currency}")
+
+# calculate the margin
+symbol = "XAUUSD"
+action = mt.ORDER_TYPE_BUY
+lot = 1.0
+ask = mt.symbol_info_tick(symbol).ask
+margin = mt.order_calc_margin(action, symbol, lot, ask)
+
+if margin:
+    print(f"You set order {symbol} / {action} in volume {lot} lot in price {ask} your margin is {margin} {currency}")
+else:
+    print("You don't have order")
+
+print()
+
+# Calculate the profit
+symbol = "XAUUSD"
+lot = 1.0
+distance = 300
+point = mt.symbol_info(symbol).point
+print(point)
+symbol_tick = mt.symbol_info_tick(symbol)
+ask = symbol_tick.ask
+bid = symbol_tick.bid
+
+take_profit = ask + (distance * point)
+print(take_profit, ask, (take_profit - ask))
+action = mt.ORDER_TYPE_BUY
+buy_profit = mt.order_calc_profit(action, symbol, lot, ask, take_profit)
+
+if buy_profit:
+    print(f"Your profit in {symbol} by volume {lot} lot in {distance} point is {buy_profit} {currency}")
+else:
+    print("something is wrong")
+
+take_profit = bid - (distance * point)
+print(bid, take_profit, (bid - take_profit))
+action = mt.ORDER_TYPE_SELL
+sell_profit = mt.order_calc_profit(action, symbol, lot, bid, take_profit)
+
+if sell_profit:
+    print(f"Your profit in {symbol} by volume {lot} lot in {distance} point is {sell_profit} {currency}")
+else:
+    print("something is wrong")
+
+print()
+
+# Set Sell Order
+symbol = "XAUUSD"
+point = mt.symbol_info(symbol).point
+tp_distance = 300
+sl_distance = 100
+lot = 1.0
+symbol_info_tick = mt.symbol_info_tick(symbol)
+price = symbol_info_tick.ask
+tp = price + (tp_distance * point)
+sl = price - (sl_distance * point)
+request = {
+    "action": mt.TRADE_ACTION_DEAL,
+    "symbol": symbol,
+    "volume": lot,
+    "type": mt.ORDER_TYPE_BUY,
+    "price": price,
+    "sl": sl,
+    "tp": tp,
+    "deviation": 10,
+    "magic": 234000,
+    "comment": "Python",
+    "type_time": mt.ORDER_TIME_GTC,
+    "type_filling": mt.ORDER_FILLING_RETURN
+}
+
+result = mt.order_check(request)._asdict()
+for i in result:
+    print(i, result[i])
+print()
+
+# Get number of active orders
+orders = mt.orders_total()
+if orders > 1:
+    print(f"You have {orders} active orders")
+elif orders == 1:
+    print("You have 1 active order")
+else:
+    print("You don't have any active order")
+
+# Get number of active orders with symbol param
+orders_symbol = mt.orders_get(symbol="XAUUSD")
+if len(orders_symbol) > 1:
+    print(f"You have {len(orders_symbol)} active orders")
+elif len(orders_symbol) == 1:
+    print("You have 1 active order")
+else:
+    print("You don't have any active order")
+
+# Get number of active orders with group param
+orders_group = mt.orders_get(group="*XAU*")
+if len(orders_group) > 1:
+    print(f"You have {len(orders_group)} active orders")
+elif len(orders_group) == 1:
+    print("You have 1 active order")
+else:
+    print("You don't have any active order")
 
 mt.shutdown()
