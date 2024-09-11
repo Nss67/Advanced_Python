@@ -1,0 +1,105 @@
+,date-time,symbol,country,event,subject,impact
+1,2024-09-11 11:00:00.0,USD,United States,MBA Mortgage Market Index,(Sep/06),Low
+2,2024-09-11 11:00:00.0,USD,United States,MBA Purchase Index,(Sep/06),Low
+3,2024-09-11 11:00:00.0,USD,United States,MBA 30-Year Mortgage Rate,(Sep/06),Low
+4,2024-09-11 11:00:00.0,USD,United States,MBA Mortgage Applications,(Sep/06),Low
+5,2024-09-11 11:00:00.0,USD,United States,MBA Mortgage Refinance Index,(Sep/06),Low
+6,2024-09-11 12:30:00.0,USD,United States,CPI s.a,(Aug),Low
+7,2024-09-11 12:30:00.0,USD,United States,Core Inflation Rate MoM,(Aug),Low
+8,2024-09-11 12:30:00.0,USD,United States,Inflation Rate MoM,(Aug),Low
+9,2024-09-11 12:30:00.0,USD,United States,Inflation Rate YoY,(Aug),Low
+10,2024-09-11 12:30:00.0,USD,United States,Core Inflation Rate YoY,(Aug),Low
+11,2024-09-11 12:30:00.0,USD,United States,CPI,(Aug),Low
+12,2024-09-11 14:30:00.0,USD,United States,EIA Refinery Crude Runs Change,(Sep/06),Low
+13,2024-09-11 14:30:00.0,USD,United States,EIA Gasoline Stocks Change,(Sep/06),Low
+14,2024-09-11 14:30:00.0,USD,United States,EIA Heating Oil Stocks Change,(Sep/06),Low
+15,2024-09-11 14:30:00.0,USD,United States,EIA Distillate Fuel Production Change,(Sep/06),Low
+16,2024-09-11 14:30:00.0,USD,United States,EIA Gasoline Production Change,(Sep/06),Low
+17,2024-09-11 14:30:00.0,USD,United States,EIA Crude Oil Stocks Change,(Sep/06),Low
+18,2024-09-11 14:30:00.0,USD,United States,EIA Crude Oil Imports Change,(Sep/06),Low
+19,2024-09-11 14:30:00.0,USD,United States,EIA Cushing Crude Oil Stocks Change,(Sep/06),Low
+20,2024-09-11 14:30:00.0,USD,United States,EIA Distillate Stocks Change,(Sep/06),Low
+21,2024-09-11 15:00:00.0,USD,United States,Balance of Trade,(Jul),Low
+22,2024-09-11 15:30:00.0,USD,United States,17-Week Bill Auction,(Jul),Low
+23,2024-09-11 17:00:00.0,USD,United States,10-Year Note Auction,(Jul),Low
+24,2024-09-12 12:30:00.0,USD,United States,PPI YoY,(Aug),Low
+25,2024-09-12 12:30:00.0,USD,United States,PPI MoM,(Aug),Low
+26,2024-09-12 12:30:00.0,USD,United States,Core PPI YoY,(Aug),Low
+27,2024-09-12 12:30:00.0,USD,United States,Core PPI MoM,(Aug),Low
+28,2024-09-12 12:30:00.0,USD,United States,"PPI Ex Food, Energy and Trade MoM",(Aug),Low
+29,2024-09-12 12:30:00.0,USD,United States,"PPI Ex Food, Energy and Trade YoY",(Aug),Low
+30,2024-09-12 12:30:00.0,USD,United States,PPI,(Aug),Low
+31,2024-09-12 12:30:00.0,USD,United States,Continuing Jobless Claims,(Aug/31),Low
+32,2024-09-12 12:30:00.0,USD,United States,Jobless Claims 4-week Average,(Sep/07),Low
+33,2024-09-12 12:30:00.0,USD,United States,Initial Jobless Claims,(Sep/07),Low
+34,2024-09-12 14:30:00.0,USD,United States,EIA Natural Gas Stocks Change,(Sep/06),Low
+35,2024-09-12 15:30:00.0,USD,United States,8-Week Bill Auction,,Low
+36,2024-09-12 15:30:00.0,USD,United States,4-Week Bill Auction,,Low
+37,2024-09-12 16:00:00.0,USD,United States,30-Year Mortgage Rate,(Sep/11),Low
+38,2024-09-12 16:00:00.0,USD,United States,15-Year Mortgage Rate,(Sep/11),Low
+39,2024-09-12 16:00:00.0,USD,United States,WASDE Report,(Sep/11),Low
+40,2024-09-12 17:00:00.0,USD,United States,30-Year Bond Auction,(Sep/11),Low
+41,2024-09-12 18:00:00.0,USD,United States,Monthly Budget Statement,(Aug),Low
+42,2024-09-12 20:30:00.0,USD,United States,Fed Balance Sheet,(Sep/11),Low
+43,2024-09-13 12:30:00.0,USD,United States,Export Prices YoY,(Aug),Low
+44,2024-09-13 12:30:00.0,USD,United States,Import Prices YoY,(Aug),Low
+45,2024-09-13 12:30:00.0,USD,United States,Import Prices MoM,(Aug),Low
+46,2024-09-13 12:30:00.0,USD,United States,Export Prices MoM,(Aug),Low
+47,2024-09-13 14:00:00.0,USD,United States,Michigan Consumer Sentiment,(Sep),Low
+48,2024-09-13 14:00:00.0,USD,United States,Michigan Consumer Expectations,(Sep),Low
+49,2024-09-13 14:00:00.0,USD,United States,Michigan Current Conditions,(Sep),Low
+50,2024-09-13 14:00:00.0,USD,United States,Michigan Inflation Expectations,(Sep),Low
+51,2024-09-13 14:00:00.0,USD,United States,Michigan 5 Year Inflation Expectations,(Sep),Low
+52,2024-09-13 17:00:00.0,USD,United States,Baker Hughes Oil Rig Count,(Sep/13),Low
+53,2024-09-13 17:00:00.0,USD,United States,Baker Hughes Total Rigs Count,(Sep/13),Low
+54,2024-09-15 00:00:00.0,USD,United States,NBS Press Conference,Independence Day,Low
+55,2024-09-16 12:30:00.0,USD,United States,NY Empire State Manufacturing Index,(Sep),Low
+56,2024-09-16 15:30:00.0,USD,United States,6-Month Bill Auction,(Jul),Low
+57,2024-09-16 15:30:00.0,USD,United States,3-Month Bill Auction,(Jul),Low
+58,2024-09-16 16:00:00.0,USD,United States,NOPA Crush Report,(Jul),Low
+59,2024-09-17 12:30:00.0,USD,United States,Retail Sales Ex Gas/Autos MoM,(Aug),High
+60,2024-09-17 12:30:00.0,USD,United States,Retail Sales YoY,(Aug),High
+61,2024-09-17 12:30:00.0,USD,United States,Retail Sales Ex Autos MoM,(Aug),High
+62,2024-09-17 12:30:00.0,USD,United States,Retail Sales MoM,(Aug),High
+63,2024-09-17 12:55:00.0,USD,United States,Redbook YoY,(Sep/14),High
+64,2024-09-17 13:15:00.0,USD,United States,Manufacturing Production YoY,(Aug),High
+65,2024-09-17 13:15:00.0,USD,United States,Capacity Utilization,(Aug),High
+66,2024-09-17 13:15:00.0,USD,United States,Industrial Production MoM,(Aug),High
+67,2024-09-17 13:15:00.0,USD,United States,Industrial Production YoY,(Aug),High
+68,2024-09-17 13:15:00.0,USD,United States,Manufacturing Production MoM,(Aug),High
+69,2024-09-17 14:00:00.0,USD,United States,Business Inventories MoM,(Jul),High
+70,2024-09-17 14:00:00.0,USD,United States,Retail Inventories Ex Autos MoM,(Jul),High
+71,2024-09-17 14:00:00.0,USD,United States,NAHB Housing Market Index,(Sep),High
+72,2024-09-17 17:00:00.0,USD,United States,20-Year Bond Auction,(Sep/17),Low
+73,2024-09-17 20:30:00.0,USD,United States,API Crude Oil Stock Change,(Sep/13),Low
+74,2024-09-18 00:00:00.0,USD,United States,International Monetary Market (IMM) Date,(Aug),High
+75,2024-09-18 11:00:00.0,USD,United States,MBA 30-Year Mortgage Rate,(Sep/13),Low
+76,2024-09-18 11:00:00.0,USD,United States,MBA Purchase Index,(Sep/13),Low
+77,2024-09-18 11:00:00.0,USD,United States,MBA Mortgage Applications,(Sep/13),Low
+78,2024-09-18 11:00:00.0,USD,United States,MBA Mortgage Market Index,(Sep/13),Low
+79,2024-09-18 11:00:00.0,USD,United States,MBA Mortgage Refinance Index,(Sep/13),Low
+80,2024-09-18 12:30:00.0,USD,United States,Housing Starts,(Aug),Low
+81,2024-09-18 12:30:00.0,USD,United States,Building Permits,(Aug),Low
+82,2024-09-18 12:30:00.0,USD,United States,Housing Starts MoM,(Aug),Low
+83,2024-09-18 12:30:00.0,USD,United States,Building Permits MoM,(Aug),Low
+84,2024-09-18 14:30:00.0,USD,United States,EIA Refinery Crude Runs Change,(Sep/13),Low
+85,2024-09-18 14:30:00.0,USD,United States,EIA Gasoline Stocks Change,(Sep/13),Low
+86,2024-09-18 14:30:00.0,USD,United States,EIA Heating Oil Stocks Change,(Sep/13),Low
+87,2024-09-18 14:30:00.0,USD,United States,EIA Distillate Fuel Production Change,(Sep/13),Low
+88,2024-09-18 14:30:00.0,USD,United States,EIA Gasoline Production Change,(Sep/13),Low
+89,2024-09-18 14:30:00.0,USD,United States,EIA Crude Oil Stocks Change,(Sep/13),Low
+90,2024-09-18 14:30:00.0,USD,United States,EIA Cushing Crude Oil Stocks Change,(Sep/13),Low
+91,2024-09-18 14:30:00.0,USD,United States,EIA Crude Oil Imports Change,(Sep/13),Low
+92,2024-09-18 14:30:00.0,USD,United States,EIA Distillate Stocks Change,(Sep/13),Low
+93,2024-09-18 15:30:00.0,USD,United States,17-Week Bill Auction,(Sep/13),Low
+94,2024-09-18 18:00:00.0,USD,United States,Fed Interest Rate Decision,(Sep/13),Medium
+95,2024-09-18 18:00:00.0,USD,United States,Interest Rate Projection - Longer,(Sep/13),Medium
+96,2024-09-18 18:00:00.0,USD,United States,Interest Rate Projection - Current,(Sep/13),Medium
+97,2024-09-18 18:00:00.0,USD,United States,Interest Rate Projection - 3rd Yr,(Sep/13),Medium
+98,2024-09-18 18:00:00.0,USD,United States,Interest Rate Projection - 2nd Yr,(Sep/13),Medium
+99,2024-09-18 18:00:00.0,USD,United States,Interest Rate Projection - 1st Yr,(Sep/13),Medium
+100,2024-09-18 18:00:00.0,USD,United States,FOMC Economic Projections,(Sep/13),Medium
+101,2024-09-18 18:30:00.0,USD,United States,Fed Press Conference,(Sep/13),Medium
+102,2024-09-18 20:00:00.0,USD,United States,Foreign Bond Investment,(Jul),Medium
+103,2024-09-18 20:00:00.0,USD,United States,Overall Net Capital Flows,(Jul),Medium
+104,2024-09-18 20:00:00.0,USD,United States,Net Long-term TIC Flows,(Jul),Medium
