@@ -68,6 +68,7 @@ from random import randint as rnd
 # plt.savefig("./Figs/Modern_Pie_Graph.png")
 # plt.show()
 
+
 # Scatter Plot
 def r_points(num, _min, _max):
     points = [rnd(_min, _max) for i in range(num)]
