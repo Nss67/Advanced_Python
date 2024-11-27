@@ -14,14 +14,14 @@ if not mt.initialize():
 print(mt.version())
 # print(mt.terminal_info())
 
-account = 5027186360
-connect_to = mt.login(account, password="@pDkDj0g", server="MetaQuotes-Demo")
+account = 87116894
+connect_to = mt.login(account, password="*i6fAbOa", server="MetaQuotes-Demo")
 if connect_to:
     print(f"you are connect to this account: {account} successfully")
 else:
     print("your connection is failed, because of this error:", mt.last_error())
 
-connect_to_with_pass = mt.login(account, password="@pDkDj0g", server="MetaQuotes-Demo")
+connect_to_with_pass = mt.login(account, password="*i6fAbOa", server="MetaQuotes-Demo")
 if connect_to_with_pass:
     print(mt.account_info())
     print("show account_info()._asdict():")
@@ -127,74 +127,74 @@ for i in last_tick._asdict():
 # else:
 #     print("Market book Failed. Error Code is:", mt.last_error())
 
-timezone = pytz.timezone("Asia/Tehran")
-local_time = datetime.now()
-print(local_time)
+# timezone = pytz.timezone("Asia/Tehran")
+# local_time = datetime.now()
+# print(local_time)
 
-# Get 10 candles info for 4H and 15min and 3min timeframe with timezone
-candles_4h = mt.copy_rates_from("XAUUSD", mt.TIMEFRAME_H4, local_time, 10)
-candles_15m = mt.copy_rates_from("XAUUSD", mt.TIMEFRAME_M15, local_time, 10)
-candles_3m = mt.copy_rates_from("XAUUSD", mt.TIMEFRAME_M3, local_time, 10)
+# # Get 10 candles info for 4H and 15min and 3min timeframe with timezone
+# candles_4h = mt.copy_rates_from("XAUUSD", mt.TIMEFRAME_H4, local_time, 10)
+# candles_15m = mt.copy_rates_from("XAUUSD", mt.TIMEFRAME_M15, local_time, 10)
+# candles_3m = mt.copy_rates_from("XAUUSD", mt.TIMEFRAME_M3, local_time, 10)
 
-print(type(candles_3m))
+# print(type(candles_3m))
 
-candles_4h_dataframe = pd.DataFrame(candles_4h)
-candles_4h_dataframe.index = range(1, len(candles_4h_dataframe.index)+1)
-candles_4h_dataframe["time"] = pd.to_datetime(candles_4h_dataframe["time"], unit="s", utc=True)
-candles_4h_dataframe["time"] = candles_4h_dataframe["time"].dt.tz_convert(tz=timezone)
-print(candles_4h_dataframe, "\n")
+# candles_4h_dataframe = pd.DataFrame(candles_4h)
+# candles_4h_dataframe.index = range(1, len(candles_4h_dataframe.index)+1)
+# candles_4h_dataframe["time"] = pd.to_datetime(candles_4h_dataframe["time"], unit="s", utc=True)
+# candles_4h_dataframe["time"] = candles_4h_dataframe["time"].dt.tz_convert(tz=timezone)
+# print(candles_4h_dataframe, "\n")
 
-candles_15m_dataframe = pd.DataFrame(candles_15m)
-candles_15m_dataframe.index = range(1, len(candles_15m_dataframe.index)+1)
-candles_15m_dataframe["time"] = pd.to_datetime(candles_15m_dataframe["time"], unit="s", utc=True)
-candles_15m_dataframe["time"] = candles_15m_dataframe["time"].dt.tz_convert(tz=timezone)
-print(candles_15m_dataframe, "\n")
+# candles_15m_dataframe = pd.DataFrame(candles_15m)
+# candles_15m_dataframe.index = range(1, len(candles_15m_dataframe.index)+1)
+# candles_15m_dataframe["time"] = pd.to_datetime(candles_15m_dataframe["time"], unit="s", utc=True)
+# candles_15m_dataframe["time"] = candles_15m_dataframe["time"].dt.tz_convert(tz=timezone)
+# print(candles_15m_dataframe, "\n")
 
-candles_3m_dataframe = pd.DataFrame(candles_3m)
-candles_3m_dataframe.index = range(1, len(candles_3m_dataframe.index)+1)
-candles_3m_dataframe["time"] = pd.to_datetime(candles_3m_dataframe["time"], unit="s", utc=True)
-candles_3m_dataframe["time"] = candles_3m_dataframe["time"].dt.tz_convert(tz=timezone)
-print(candles_3m_dataframe, "\n")
+# candles_3m_dataframe = pd.DataFrame(candles_3m)
+# candles_3m_dataframe.index = range(1, len(candles_3m_dataframe.index)+1)
+# candles_3m_dataframe["time"] = pd.to_datetime(candles_3m_dataframe["time"], unit="s", utc=True)
+# candles_3m_dataframe["time"] = candles_3m_dataframe["time"].dt.tz_convert(tz=timezone)
+# print(candles_3m_dataframe, "\n")
 
-# Get 10 candles info for 1D timeframe with number of candle bars from now to before
-candles_bar = mt.copy_rates_from_pos("XAUUSD", mt.TIMEFRAME_D1, 0, 10)
-candles_bar_dataframe = pd.DataFrame(candles_bar)
-candles_bar_dataframe.index = range(1, len(candles_bar_dataframe.index)+1)
-candles_bar_dataframe["time"] = pd.to_datetime(candles_bar_dataframe["time"], unit="s", utc=True)
-candles_bar_dataframe["time"] = candles_bar_dataframe["time"].dt.tz_convert(tz=timezone)
-print(candles_bar_dataframe, "\n")
+# # Get 10 candles info for 1D timeframe with number of candle bars from now to before
+# candles_bar = mt.copy_rates_from_pos("XAUUSD", mt.TIMEFRAME_D1, 0, 10)
+# candles_bar_dataframe = pd.DataFrame(candles_bar)
+# candles_bar_dataframe.index = range(1, len(candles_bar_dataframe.index)+1)
+# candles_bar_dataframe["time"] = pd.to_datetime(candles_bar_dataframe["time"], unit="s", utc=True)
+# candles_bar_dataframe["time"] = candles_bar_dataframe["time"].dt.tz_convert(tz=timezone)
+# print(candles_bar_dataframe, "\n")
 
-# Get range of candles between two different range times
-time01 = datetime(2023, 6, 25, tzinfo=pytz.utc)
-time02 = datetime(2024, 6, 25, tzinfo=pytz.utc)
-candles_range = mt.copy_rates_range("XAUUSD", mt.TIMEFRAME_W1, time01, time02)
-candles_range_dataframe = pd.DataFrame(candles_range)
-candles_range_dataframe.index = range(1, len(candles_range_dataframe.index)+1)
-candles_range_dataframe["time"] = pd.to_datetime(candles_range_dataframe["time"], unit="s", utc=True)
-candles_range_dataframe["time"] = candles_range_dataframe["time"].dt.tz_convert(tz=timezone)
-print(candles_range_dataframe, "\n")
+# # Get range of candles between two different range times
+# time01 = datetime(2023, 6, 25, tzinfo=pytz.utc)
+# time02 = datetime(2024, 6, 25, tzinfo=pytz.utc)
+# candles_range = mt.copy_rates_range("XAUUSD", mt.TIMEFRAME_W1, time01, time02)
+# candles_range_dataframe = pd.DataFrame(candles_range)
+# candles_range_dataframe.index = range(1, len(candles_range_dataframe.index)+1)
+# candles_range_dataframe["time"] = pd.to_datetime(candles_range_dataframe["time"], unit="s", utc=True)
+# candles_range_dataframe["time"] = candles_range_dataframe["time"].dt.tz_convert(tz=timezone)
+# print(candles_range_dataframe, "\n")
 
-# Get range ticks from specific date to now in specific number of ticks with flag to define kind of ticks
-specific_date = datetime(2024, 3, 12, tzinfo=pytz.utc)
-count = 1500
-flag = mt.COPY_TICKS_ALL
-tick_range_from = mt.copy_ticks_from("XAUUSD", specific_date, count, flag)
-tick_range_from_dataframe = pd.DataFrame(tick_range_from)
-tick_range_from_dataframe.index = range(1, len(tick_range_from_dataframe.index)+1)
-tick_range_from_dataframe["time"] = pd.to_datetime(tick_range_from_dataframe["time"], unit="s", utc=True)
-tick_range_from_dataframe["time"] = tick_range_from_dataframe["time"].dt.tz_convert(tz=timezone)
-print(tick_range_from_dataframe, "\n")
+# # Get range ticks from specific date to now in specific number of ticks with flag to define kind of ticks
+# specific_date = datetime(2024, 3, 12, tzinfo=pytz.utc)
+# count = 1500
+# flag = mt.COPY_TICKS_ALL
+# tick_range_from = mt.copy_ticks_from("XAUUSD", specific_date, count, flag)
+# tick_range_from_dataframe = pd.DataFrame(tick_range_from)
+# tick_range_from_dataframe.index = range(1, len(tick_range_from_dataframe.index)+1)
+# tick_range_from_dataframe["time"] = pd.to_datetime(tick_range_from_dataframe["time"], unit="s", utc=True)
+# tick_range_from_dataframe["time"] = tick_range_from_dataframe["time"].dt.tz_convert(tz=timezone)
+# print(tick_range_from_dataframe, "\n")
 
-# Get range ticks from specific date to other specific date with flag to define kind of ticks
-first_specific_date = datetime(2024, 3, 12, tzinfo=pytz.utc)
-second_specific_date = datetime(2024, 6, 12, tzinfo=pytz.utc)
-flag = mt.COPY_TICKS_ALL
-tick_range_from = mt.copy_ticks_range("XAUUSD", first_specific_date, second_specific_date, flag)
-tick_range_from_dataframe = pd.DataFrame(tick_range_from)
-tick_range_from_dataframe.index = range(1, len(tick_range_from_dataframe.index)+1)
-tick_range_from_dataframe["time"] = pd.to_datetime(tick_range_from_dataframe["time"], unit="s", utc=True)
-tick_range_from_dataframe["time"] = tick_range_from_dataframe["time"].dt.tz_convert(tz=timezone)
-print(tick_range_from_dataframe, "\n")
+# # Get range ticks from specific date to other specific date with flag to define kind of ticks
+# first_specific_date = datetime(2024, 3, 12, tzinfo=pytz.utc)
+# second_specific_date = datetime(2024, 6, 12, tzinfo=pytz.utc)
+# flag = mt.COPY_TICKS_ALL
+# tick_range_from = mt.copy_ticks_range("XAUUSD", first_specific_date, second_specific_date, flag)
+# tick_range_from_dataframe = pd.DataFrame(tick_range_from)
+# tick_range_from_dataframe.index = range(1, len(tick_range_from_dataframe.index)+1)
+# tick_range_from_dataframe["time"] = pd.to_datetime(tick_range_from_dataframe["time"], unit="s", utc=True)
+# tick_range_from_dataframe["time"] = tick_range_from_dataframe["time"].dt.tz_convert(tz=timezone)
+# print(tick_range_from_dataframe, "\n")
 
 # Get info Account Currency
 balance = mt.account_info().balance
@@ -301,135 +301,263 @@ else:
 
 # =====================================================
 timezone = pytz.timezone("Asia/Tehran")
-counter = 1000
+counter = 10
 e_count = 0
 trade_number = 0
 while counter > 0:
-    # Send and Set Order
-    symbol = "EURUSD"
-    lot = 10.0
-    point = mt.symbol_info(symbol).point
-    price = mt.symbol_info_tick(symbol).ask
-    tp_distance = 25
-    sl_distance = 5
-    tp = price + (tp_distance * point)
-    sl = price - (sl_distance * point)
-    deviation = 0
-    request = {
-        "action": mt.TRADE_ACTION_DEAL,
-        "symbol": symbol,
-        "volume": lot,
-        "type": mt.ORDER_TYPE_BUY,
-        "price": price,
-        "sl": sl,
-        "tp": tp,
-        "deviation": deviation,
-        "magic": 234000,
-        "comment": "Good Job Nss67",
-        "type_time": mt.ORDER_TIME_GTC,
-        "type_filling": mt.ORDER_FILLING_RETURN
-    }
+    # # Send and Set Order
+    # symbol = "XAUUSD"
+    # lot = 1.0
+    # point = mt.symbol_info(symbol).point
+    # price = mt.symbol_info_tick(symbol).ask
+    # tp_distance = 25
+    # sl_distance = 5
+    # tp = price + (tp_distance * point)
+    # sl = price - (sl_distance * point)
+    # deviation = 0
+    # data = {
+    #     "action": mt.TRADE_ACTION_DEAL,
+    #     "type_filling": mt.ORDER_FILLING_RETURN,
+    #     "symbol": symbol,
+    #     "volume": lot,
+    #     "type": mt.ORDER_TYPE_BUY,
+    #     "price": price,
+    #     # "sl": sl,
+    #     # "tp": tp,
+    #     "deviation": deviation,
+    #     "magic": 234000,
+    #     "comment": "Good Job Nss67",
+    #     "type_time": mt.ORDER_TIME_GTC
+    # }
 
-    # result = mt.order_check(request)._asdict()
-    # for i in result:
-    #     print(i, result[i])
-    # print()
+    # pair_symbol = "XAUUSD"
+    # volume_lot_trade = 1.0
+    # ep_900 = 2645.0
+    # sl_900 = 2644.0
+    # tp_900 = 2646.0
+    # news_time = "2024-10-07 15:45:00"
+    # before_news_time = pd.to_datetime(news_time)
+    # print(before_news_time)
+    # before_news_time = int(before_news_time.timestamp())
+    # print(before_news_time)
+    # trade_data_300 = {
+    #     "action": mt.TRADE_ACTION_PENDING,
+    #     "type_filling": mt.ORDER_FILLING_RETURN,
+    #     "symbol": pair_symbol,
+    #     "volume": volume_lot_trade,
+    #     "type": mt.ORDER_TYPE_BUY_LIMIT,
+    #     "price": ep_900,
+    #     "sl": sl_900,
+    #     "tp": tp_900,
+    #     "deviation": 0,
+    #     "magic": 20241004,
+    #     "type_time": mt.ORDER_TIME_SPECIFIED,
+    #     "expiration": before_news_time,
+    #     "comment": "Market Structure is uptrend"
+    #     }
 
-    result = mt.order_send(request)
-    if result.retcode != mt.TRADE_RETCODE_DONE:
-        counter += 1
-        e_count += 1
-        print(f"Order send is failed. Return Code is {result.retcode}")
-        result_dict = result._asdict()
-        for i in result_dict:
-            if i == "comment":
-                print(i, result_dict[i])
-                print(f"Error number is {e_count}")
-            # if i == "request":
-            #     trade_request_dict = result_dict[i]._asdict()
-            #     for x in trade_request_dict:
-            #         print(x, trade_request_dict[x])
-        # print("quit")
-        # mt.shutdown()
-        # quit()
+    # trade_data_600 = {
+    #     "action": mt.TRADE_ACTION_PENDING,
+    #     "type_filling": mt.ORDER_FILLING_RETURN,
+    #     "symbol": pair_symbol,
+    #     "volume": volume_lot_trade,
+    #     "type": mt.ORDER_TYPE_BUY_LIMIT,
+    #     "price": ep_900,
+    #     "sl": sl_900,
+    #     "tp": tp_900,
+    #     "deviation": 0,
+    #     "magic": 20241004,
+    #     # "type_time": mt.ORDER_TIME_SPECIFIED,
+    #     # "expiration": before_news_time,
+    #     "comment": "Market Structure is uptrend"
+    #     }
 
-    else:
-        # print(f"Order send is done with {result}")
-        print(f"Opened position with Position ticket {result.order}")
-        trade_number += 1
-        print(f"Trade number is {trade_number}")
-        while True:
-            if mt.positions_total() == 0:
-                time.sleep(1)
-                break
-            # else:
-            #     print(symbol)
-            #     position = mt.positions_get(symbol=symbol)
-            #     position_dataframe = pd.DataFrame(position, columns=position[0]._asdict().keys())  # P:2839
-            #     position_dataframe.index = range(1, len(position_dataframe.index) + 1)
-            #     position_dataframe["time"] = pd.to_datetime(position_dataframe["time"], unit="s", utc=True)
-            #     position_dataframe["time"] = position_dataframe["time"].dt.tz_convert(tz=timezone)
-            #     print(position_dataframe, "\n")
-            #     time.sleep(3)
+    # trade_data_900 = {
+    #     "action": mt.TRADE_ACTION_PENDING,
+    #     "type_filling": mt.ORDER_FILLING_RETURN,
+    #     "symbol": pair_symbol,
+    #     "volume": volume_lot_trade,
+    #     "type": mt.ORDER_TYPE_BUY_LIMIT,
+    #     "price": ep_900,
+    #     "sl": sl_900,
+    #     "tp": tp_900,
+    #     "deviation": 0,
+    #     "magic": 20241004,
+    #     # "type_time": mt.ORDER_TIME_SPECIFIED,
+    #     # "expiration": before_news_time,
+    #     "comment": "Market Structure is uptrend"
+    #     }
+
+    # # result = mt.order_check(request)._asdict()
+    # # for i in result:
+    # #     print(i, result[i])
+    # # print()
+
+    # sender = mt.order_send(data)
+    # if sender.retcode != mt.TRADE_RETCODE_DONE:
+    #     time.sleep(10)
+    #     counter += 1
+    #     e_count += 1
+    #     print(f"Order send is failed. Return Code is {sender.retcode}")
+    #     result_dict = sender._asdict()
+    #     for i in result_dict:
+    #         if i == "comment":
+    #             print(i, result_dict[i])
+    #             print(f"Error number is {e_count}")
+    #         # if i == "request":
+    #         #     trade_request_dict = result_dict[i]._asdict()
+    #         #     for x in trade_request_dict:
+    #         #         print(x, trade_request_dict[x])
+    #     # print("quit")
+    #     # mt.shutdown()
+    #     # quit()
+
+    # else:
+    #     # print(f"Order send is done with {result}")
+    #     print(f"Opened position with Position ticket {sender.order}")
+    #     trade_number += 1
+    #     print(f"Trade number is {trade_number}")
+
+    #     # while True:
+    #     #     if mt.positions_total() == 0:
+    #     #         time.sleep(1)
+    #     #         break
+    #         # else:
+    #         #     print(symbol)
+    #         #     position = mt.positions_get(symbol=symbol)
+    #         #     position_dataframe = pd.DataFrame(position, columns=position[0]._asdict().keys())  # P:2839
+    #         #     position_dataframe.index = range(1, len(position_dataframe.index) + 1)
+    #         #     position_dataframe["time"] = pd.to_datetime(position_dataframe["time"], unit="s", utc=True)
+    #         #     position_dataframe["time"] = position_dataframe["time"].dt.tz_convert(tz=timezone)
+    #         #     print(position_dataframe, "\n")
+    #         #     time.sleep(3)
 
     counter -= 1
+    # number_active_positions = mt.positions_total()
+    # print(number_active_positions)
 
-
-# Create a close request
-position_id = result.order
-price = mt.symbol_info_tick(symbol).bid
-deviation = 20
-request = {
-    "action": mt.TRADE_ACTION_DEAL,
-    "symbol": symbol,
-    "volume": lot,
-    "type": mt.ORDER_TYPE_SELL,
-    "position": position_id,
-    "price": price,
-    "deviation": deviation,
-    "magic": 234000,
-    "comment": "I DID THIS :)",
-    "type_time": mt.ORDER_TIME_GTC,
-    "type_filling": mt.ORDER_FILLING_RETURN
-}
-
-result = mt.order_send(request)
-if result.retcode != mt.TRADE_RETCODE_DONE:
-    result_dict = result._asdict()
-    for i in result_dict:
-        print(i, result_dict[i])
-
-time.sleep(3)
-
-mt.shutdown()
-
-# Get number of active orders
-orders = mt.orders_total()
-if orders > 1:
-    print(f"You have {orders} active orders")
-elif orders == 1:
-    print("You have 1 active order")
+active_orders = mt.orders_total()
+if active_orders > 0:
+    print(f"You have {active_orders} active_orders")
 else:
     print("You don't have any active order")
 
-# Get number of active orders with symbol param
-orders_symbol = mt.orders_get(symbol="XAUUSD")
-if len(orders_symbol) > 1:
-    print(f"You have {len(orders_symbol)} active orders")
-elif len(orders_symbol) == 1:
-    print("You have 1 active order")
+symbol = "XAUUSD"
+active_positions = mt.positions_get(symbol=symbol)
+if active_positions is None:
+    print("You dont have any active position")
 else:
-    print("You don't have any active order")
+    number_active_positions = len(active_positions)
+    print(f"You have {number_active_positions} active positions")
 
-# Get number of active orders with group param
-orders_group = mt.orders_get(group="*USD*")
-if len(orders_group) > 1:
-    print(f"You have {len(orders_group)} active orders")
-elif len(orders_group) == 1:
-    print("You have 1 active order")
-else:
-    print("You don't have any active order")
+    for pos in active_positions:
+        print()
+        print(pos.price_current)
+        print(pos.price_open)
+        
+        print(pos.price_current - pos.price_open)
+        print(pos.profit)
+        print(pos)
+        print()
+        # Create a close request
+        position_ticket = pos.ticket
+        symbol = pos.symbol
+        ep = pos.price_open
+        sl = 2635.5
+        # sl = 0.0
+        tp = float(ep + (310 * 0.01))
+        request = {
+            "action": mt.TRADE_ACTION_SLTP,
+            "symbol": symbol,
+            "position": position_ticket,
+            "sl": sl,
+            "tp": tp
+        }
 
-# Try to learn work with Economic Calendar p:1765 / 6696
+        result = mt.order_send(request)
+        if result.retcode != mt.TRADE_RETCODE_DONE:
+            result_dict = result._asdict()
+            for i in result_dict:
+                print(i, result_dict[i])
+        else:
+            print("Your position SL and TP is changed successfully")
 
-mt.shutdown()
+        time.sleep(3)
+
+        # position_id = result.order
+        # price = mt.symbol_info_tick(symbol).bid
+        # deviation = 20
+        # request = {
+        #     "action": mt.TRADE_ACTION_SLTP,
+        #     "symbol": symbol,
+        #     "volume": lot,
+        #     "type": mt.ORDER_TYPE_SELL,
+        #     "position": position_id,
+        #     "price": price,
+        #     "deviation": deviation,
+        #     "magic": 234000,
+        #     "comment": "I DID THIS :)",
+        #     "type_time": mt.ORDER_TIME_GTC,
+        #     "type_filling": mt.ORDER_FILLING_RETURN
+        # }
+
+        # pos_items = dir(pos)
+        # for d in pos_items:
+        #     if "_" not in d:
+        #         value = getattr(pos, d)
+        #         print(d, value)
+        #         print()
+
+
+# active_orders = mt.orders_get()
+# if active_orders is None:
+#     print("You don't have no orders")
+# else:
+#     numbers_active_orders = len(active_orders)
+#     print(f"You have {numbers_active_orders} active orders")
+
+#     for order in active_orders:
+#         request = {
+#         "action": mt.TRADE_ACTION_REMOVE,
+#         "order": order.ticket
+#         }
+
+#         sender = mt.order_send(request)
+#         if sender.retcode != mt.TRADE_RETCODE_DONE:
+#             print(f"Your order ticket: {order.ticket} is not canceled and this return code is: {sender.retcode}")
+#         else:
+#             print(f"Your order ticket: {order.ticket} is canceled successfully")
+
+
+# mt.shutdown()
+
+# # Get number of active orders
+# orders = mt.orders_total()
+# if orders > 1:
+#     print(f"You have {orders} active orders")
+# elif orders == 1:
+#     print("You have 1 active order")
+# else:
+#     print("You don't have any active order")
+
+# # Get number of active orders with symbol param
+# orders_symbol = mt.orders_get(symbol="XAUUSD")
+# if len(orders_symbol) > 1:
+#     print(f"You have {len(orders_symbol)} active orders")
+# elif len(orders_symbol) == 1:
+#     print("You have 1 active order")
+# else:
+#     print("You don't have any active order")
+
+# # Get number of active orders with group param
+# orders_group = mt.orders_get(group="*USD*")
+# if len(orders_group) > 1:
+#     print(f"You have {len(orders_group)} active orders")
+# elif len(orders_group) == 1:
+#     print("You have 1 active order")
+# else:
+#     print("You don't have any active order")
+
+# # Try to learn work with Economic Calendar p:1765 / 6696
+
+# mt.shutdown()
