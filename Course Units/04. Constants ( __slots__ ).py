@@ -30,7 +30,6 @@ class Constant:
         print("=====================")
 
 
-
 obj = Constant()
 print(obj.PI)
 print(obj.Name)
