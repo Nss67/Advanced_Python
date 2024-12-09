@@ -61,4 +61,12 @@ if __name__ == "__main__":
     first_instance = A(66)
     second_instance = B()
 
+    class EmptyClass:
+        pass
+
+    cc = EmptyClass()
+    print(dir(cc))
+    print(dir(second_instance))
+    print(dir(first_instance))
+
 
